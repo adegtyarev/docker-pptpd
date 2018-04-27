@@ -1,0 +1,9 @@
+pptpd:
+    image: adegtyarev/pptpd
+    ports:
+        - 1723:1723
+    volumes:
+        - ./config/pptpd.conf:/etc/pptpd.conf
+        - ./config/pptpd-options:/etc/ppp/options.pptp
+        - ./chap-secrets:/etc/ppp/chap-secrets
+    privileged: true
